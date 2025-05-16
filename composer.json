@@ -1,6 +1,7 @@
 {
     "require": {
         "nyholm/psr7": "*",
+        "spiral/roadrunner-cli": "*",
         "spiral/roadrunner-http": "*",
         "spiral/roadrunner-worker": "*"
     }

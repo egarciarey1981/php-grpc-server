@@ -1,6 +1,6 @@
 # Motivación
 
-Actualmente trabajo con un servidor que utiliza RoadRunner, PHP y gRPC. La idea es ver como motar un proyecto desde cero.
+Actualmente trabajo con un servidor que utiliza RoadRunner, PHP y gRPC. La ideaes ver como motar un proyecto desde cero.
 
 ## Primer paso: Servidor HTTP
 
@@ -15,3 +15,11 @@ Composer me ha dado problemas, entiendo que la imagen tendrá que tener las depe
 Tambien he tenido que instalar el comando _zip_ y la extensión _sockets_ de PHP. Todo en Dockerfile.
 
 Por fin levanto el servidor, lo veo en _localhost:8080_, como indicaba _.rr.yaml_, cuyo puerto he tenido que poner tambien en _compose.yaml_.
+
+## Segundo paso: Protocol Buffers
+
+La documentación habla de ejecutar un comando para descargar un plugin de Protocol Buffers para PHP. Yo lo he movido a _/opt_ para que no se sobreescriba como pasaba con la carpeta _vendor_.
+
+Cuando he ido a compilar el archivo _.proto_ me he dado cuenta de que no tengo instalado _protoc_, así que lo instalo directamente con APT.
+
+He conseguido compilar el archivo _.proto_ y me ha creado los archivos de PHP.
