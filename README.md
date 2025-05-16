@@ -23,3 +23,28 @@ La documentación habla de ejecutar un comando para descargar un plugin de Proto
 Cuando he ido a compilar el archivo _.proto_ me he dado cuenta de que no tengo instalado _protoc_, así que lo instalo directamente con APT.
 
 He conseguido compilar el archivo _.proto_ y me ha creado los archivos de PHP.
+
+## Tercer paso: Servidor gRPC
+
+Siguiendo la documentación, creo el servicio que implementa la interfaz del servicio, esta interfaz se ha creado al compilar el archivo _.proto_.
+
+Ya no utilizaremos psr-worker.php, ahora utilizaremos grpc-worker.php. Este cambio implica modificar el archivo .rr.yaml y el archivo compose.yaml, gRPC utiliza el puerto 9001.
+
+Levanto de nuevo el servidor, veo que esta corriendo en el puerto 9001.
+
+He conseguido hacer peticiones usando _grpc-client-cli_, el cliente que viene en la documentación de RoadRunner.
+
+```terminal
+root@app:/code# grpc-client-cli --proto /code/proto/ localhost:9001
+
+? Choose a service: Greeter.Greeter
+
+? Choose a method: SayHello
+
+Message json (type ? to see defaults): {"name": "Eliecer"}
+{
+  "message": "Hello Eliecer!"
+}
+```
+
+He intentado usar Postman para hacer peticiones al servidor, pero no lo he conseguido.

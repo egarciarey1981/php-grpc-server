@@ -1,12 +1,10 @@
 version: "3"
 
 server:
-  command: "php psr-worker.php"
+  command: "php grpc-worker.php"
 
-http:
-  address: 0.0.0.0:8080
+grpc:
+  listen: "tcp://127.0.0.1:9001"
 
-# do not use development mode in production
-logs:
-  level: debug
-  mode: development
+  proto:
+    - "proto/helloworld.proto"
