@@ -2,8 +2,14 @@ services:
   app:
     build: .
     ports:
-      - "8080:8080"
+#      - "8080:8080"
       - "9001:9001"
     volumes:
       - .:/code
       - ./vendor:/code/vendor
+    networks:
+      - grpc-network
+
+networks:
+  grpc-network:
+    driver: bridge

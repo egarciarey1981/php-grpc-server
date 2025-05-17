@@ -61,3 +61,9 @@ Conclusión:
 * Ambos plugin son capaces de generar la petición y la respuesta.
 * El plugin de _protoc-gen-php-grpc_ generar la interfaz que usará el servicio.
 * El plugin de _protoc-gen-grpc_ generar el cliente gRPC.
+
+## Quinto paso: Cliente gRPC externo
+
+He creado otro [repositorio con el cliente gRPC](https://github.com/egarciarey1981/php-grpc-client). He copiado en él los archivos generados al compilar los archivos .proto y los he utilizado para comunicarme con el servidor.
+
+He tenido que cambiar la red de docker para que el servidor (este repositorio) y el cliente (otro repositorio) se puedan comunicar.
