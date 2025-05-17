@@ -1,5 +1,6 @@
 {
     "require": {
+        "grpc/grpc": "*",
         "nyholm/psr7": "*",
         "spiral/roadrunner-cli": "*",
         "spiral/roadrunner-grpc": "*",

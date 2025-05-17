@@ -48,3 +48,16 @@ Message json (type ? to see defaults): {"name": "Eliecer"}
 ```
 
 He intentado usar Postman para hacer peticiones al servidor, pero no lo he conseguido.
+
+## Cuarto paso: Cliente gRPC
+
+Ahora quiero lanzar peticiones al servidor gRPC utilizando un cliente, como lo haría en otro proyecto PHP. La documentación de RoadRunner no dice nada al respecto.
+
+Leyendo en grpc.io, se deduce que la compilación debería crear un cliente gRPC. Descubro que hay que instalar otro plugin más, el que genera el cliente gRPC.
+
+La cosa se complica porque hay que descargar su código fuente (https://github.com/grpc/grpc) y compilarlo.
+
+Conclusión:
+* Ambos plugin son capaces de generar la petición y la respuesta.
+* El plugin de _protoc-gen-php-grpc_ generar la interfaz que usará el servicio.
+* El plugin de _protoc-gen-grpc_ generar el cliente gRPC.
